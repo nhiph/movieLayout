@@ -3,7 +3,7 @@ html,body{
     font-family: 'Roboto Condensed', sans-serif;
 }
 .container {
-    max-width: 1400px;
+    max-width: 1200px;
 }
 
 /* HEADER */
@@ -106,7 +106,7 @@ header i {
     margin-bottom: 20px;
     margin-top: 15px;
 }
-.carousel-caption span {
+.carousel-caption span:first-child {
     display: inline-block;
     border-radius: 70px ;
     border: 3px solid white;
@@ -117,20 +117,42 @@ header i {
     margin-right: 15px;
     text-align: center;
 }
-.carousel-caption button {
-    border: none;
+.trailer__play {
+    position: relative;
+    overflow: hidden;
+    /* display: inline; */
+    padding: 30px 0px;
+}
+.trailer__play a {
+    border: linear-gradient(to right,#fbbd61,#ec7532);
     background-image: linear-gradient(to right,#fbbd61,#ec7532);
     font-size: 20px;
     font-weight: 400;
-    position: relative;
-    overflow: hidden;
-    width: auto;
+    /* width: 100%; */
     padding: 20px 35px;
     letter-spacing: 4px;
     text-transform: uppercase;
     color: white;
     border-width: 2px;
     border-radius: 30px;
+}
+.trailer__overplay {
+    z-index: 100;
+    position: absolute;
+    top:0;
+    left: -10px;
+    width: 110%;
+    height: 100%;
+    background: #ec7532;
+    /* chưa hover */
+    transform: skewX(30deg) translateX(-50%);
+    transition: 0.5s;
+    opacity: 0;
+    transition: 0.5s;
+}
+.carousel-caption .trailer__play:hover .trailer__overplay {
+    transform: skewX(30deg) translateX(0%);
+    opacity: 0.7;
 }
 /* NEWIN */
 .newIn h2 {
